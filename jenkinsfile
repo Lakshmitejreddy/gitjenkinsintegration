@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent any
         stages{
             stage('One')
             {
@@ -30,12 +30,12 @@ pipeline {
                 parallel {
                     stage('Unit Test'){
                         steps {
-                            echo 'Running the unit test..'
+                            echo "Running the unit test.."
                         }
                     }
                     stage('Integration test') {
                         agent {
-                            docker {
+                            docker 
                                     reuseNode false
                                     image 'ubuntu'
                             }
@@ -47,5 +47,5 @@ pipeline {
                 }
             }
         }
-    }
+    
 
